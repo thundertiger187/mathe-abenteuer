@@ -1,5 +1,5 @@
 /* Netzwerk zuerst: immer die neueste Version laden (ohne HTTP-Cache), Cache nur ohne Internet */
-const CACHE = "mathe-abenteuer-v5";
+const CACHE = "mathe-abenteuer-v6";
 self.addEventListener("install", () => { self.skipWaiting(); });
 self.addEventListener("activate", (e) => {
   e.waitUntil(caches.keys().then((keys) => Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k)))).then(() => self.clients.claim()));
